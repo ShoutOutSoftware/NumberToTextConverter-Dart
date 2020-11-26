@@ -1,6 +1,6 @@
 name: number_to_text_converter
 description: A library to convert a number to text
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/ShoutOutSoftware/NumberToTextConverter-Dart
 
 environment:
