@@ -2,7 +2,7 @@ import 'package:number_to_text_converter/number_to_text_converter.dart';
 
 class NumberToTextConverterExample {
   void convertNumbersWithInternationalNumberingSystem() {
-    var converter = NumberToTextConverter.forIndianNumberingSystem();
+    var converter = NumberToTextConverter.forInternationalNumberingSystem();
 
     print(converter.convert(1)); //prints 'one'
     print(converter.convert(100)); //prints 'hundred'
