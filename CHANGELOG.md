@@ -5,3 +5,7 @@
 ## 1.0.1
 
 - Added international numbering system converter
+
+## 1.0.2
+
+- Updated readme and fixed wrong example
