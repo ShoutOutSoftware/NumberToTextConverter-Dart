@@ -12,7 +12,7 @@ class NumberToTextConverterExample {
     print(converter.convert(10000000)); //prints 'ten million'
     print(converter.convert(100000000)); //prints 'hundred million'
     print(converter.convert(1000000000)); //prints 'one billion'
-    print(converter.convert(10000000000)); //prints 'one hundred billion'
+    print(converter.convert(10000000000)); //prints 'ten billion'
   }
 
   void convertNumbersWithIndianNumberingSystem() {
