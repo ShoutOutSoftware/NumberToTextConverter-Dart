@@ -9,6 +9,9 @@ class NumberToTextConverter {
   NumberToTextConverter.forIndianNumberingSystem()
       : this._numberSplitter = IndianNumberingSystemNumberSplitter();
 
+  NumberToTextConverter.forInternationalNumberingSystem()
+      : this._numberSplitter = InternationalNumberingSystemNumberSplitter();
+
   String convert(int number) {
     if (number == null) return '';
 
