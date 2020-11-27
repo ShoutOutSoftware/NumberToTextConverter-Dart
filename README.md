@@ -4,7 +4,7 @@ A library to convert a number to text
 
 ## To convert as per International Numbering System
 ```
-var converter = NumberToTextConverter.forIndianNumberingSystem();
+var converter = NumberToTextConverter.forInternationalNumberingSystem();
 
 print(converter.convert(1)); //prints 'one'
 print(converter.convert(100)); //prints 'hundred'
