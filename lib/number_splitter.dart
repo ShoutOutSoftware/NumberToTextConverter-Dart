@@ -35,7 +35,7 @@ class IndianNumberingSystemNumberSplitter extends NumberSplitter {
   }
 
   bool _canAddNumberAsSegment(String numberString,
-      {int noOfExistingSegments, int indexOfNumber}) {
+      {int noOfExistingSegments = 0, int indexOfNumber = 0}) {
     return indexOfNumber == 0 || //last number
         (noOfExistingSegments % 3 == 0 &&
             numberString.length == 3) || //for hundreds
@@ -44,14 +44,15 @@ class IndianNumberingSystemNumberSplitter extends NumberSplitter {
   }
 
   NumberSegment _getSegmentForNumber(String numberString,
-      {int noOfExistingSegments}) {
+      {required int noOfExistingSegments}) {
     var number = int.parse(numberString);
     var magnitude = _getOrderOfMagnitudeOfSegment(number,
         indexOfSegment: noOfExistingSegments);
     return NumberSegment(number, magnitude);
   }
 
-  String _getOrderOfMagnitudeOfSegment(int segment, {int indexOfSegment}) {
+  String _getOrderOfMagnitudeOfSegment(int segment,
+      {required int indexOfSegment}) {
     var magnitude = '';
 
     if (segment != 0 && indexOfSegment % 3 == 1) magnitude = ' thousand';
@@ -89,14 +90,15 @@ class InternationalNumberingSystemNumberSplitter extends NumberSplitter {
   }
 
   NumberSegment _getSegmentForNumber(String numberString,
-      {int noOfExistingSegments}) {
+      {required int noOfExistingSegments}) {
     var number = int.parse(numberString);
     var magnitude = _getOrderOfMagnitudeOfSegment(number,
         indexOfSegment: noOfExistingSegments);
     return NumberSegment(number, magnitude);
   }
 
-  String _getOrderOfMagnitudeOfSegment(int segment, {int indexOfSegment}) {
+  String _getOrderOfMagnitudeOfSegment(int segment,
+      {required int indexOfSegment}) {
     var magnitude = '';
 
     if (segment != 0 && indexOfSegment % 6 == 1) magnitude = ' thousand';

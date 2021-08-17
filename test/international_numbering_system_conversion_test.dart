@@ -5,7 +5,6 @@ void main() {
   var converter = NumberToTextConverter.forInternationalNumberingSystem();
 
   test('international numbering system number conversion', () {
-    expect(converter.convert(null), '');
     expect(converter.convert(0), '');
     expect(converter.convert(1), 'one');
     expect(converter.convert(2), 'two');
@@ -103,7 +102,8 @@ void main() {
     expect(converter.convert(1700), 'one thousand seven hundred');
     expect(converter.convert(1800), 'one thousand eight hundred');
     expect(converter.convert(1900), 'one thousand nine hundred');
-    expect(converter.convert(1999), 'one thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(1999), 'one thousand nine hundred and ninety nine');
     expect(converter.convert(2000), 'two thousand');
     expect(converter.convert(2562), 'two thousand five hundred and sixty two');
     expect(converter.convert(3000), 'three thousand');
@@ -113,7 +113,8 @@ void main() {
     expect(converter.convert(7000), 'seven thousand');
     expect(converter.convert(8000), 'eight thousand');
     expect(converter.convert(9000), 'nine thousand');
-    expect(converter.convert(9999), 'nine thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(9999), 'nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000), 'ten thousand');
     expect(converter.convert(10001), 'ten thousand one');
     expect(converter.convert(10010), 'ten thousand ten');
@@ -121,31 +122,42 @@ void main() {
     expect(converter.convert(10083), 'ten thousand eighty three');
     expect(converter.convert(10100), 'ten thousand one hundred');
     expect(converter.convert(10500), 'ten thousand five hundred');
-    expect(converter.convert(10999), 'ten thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(10999), 'ten thousand nine hundred and ninety nine');
     expect(converter.convert(11000), 'eleven thousand');
-    expect(converter.convert(11378), 'eleven thousand three hundred and seventy eight');
+    expect(converter.convert(11378),
+        'eleven thousand three hundred and seventy eight');
     expect(converter.convert(20000), 'twenty thousand');
-    expect(converter.convert(68723), 'sixty eight thousand seven hundred and twenty three');
-    expect(converter.convert(99999), 'ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(68723),
+        'sixty eight thousand seven hundred and twenty three');
+    expect(converter.convert(99999),
+        'ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(100000), 'one hundred thousand');
     expect(converter.convert(100001), 'one hundred thousand one');
     expect(converter.convert(100010), 'one hundred thousand ten');
     expect(converter.convert(100013), 'one hundred thousand thirteen');
     expect(converter.convert(100024), 'one hundred thousand twenty four');
     expect(converter.convert(100100), 'one hundred thousand one hundred');
-    expect(converter.convert(100111), 'one hundred thousand one hundred and eleven');
-    expect(converter.convert(102111), 'one hundred and two thousand one hundred and eleven');
-    expect(converter.convert(111111), 'one hundred and eleven thousand one hundred and eleven');
-    expect(converter.convert(199999), 'one hundred and ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(100111),
+        'one hundred thousand one hundred and eleven');
+    expect(converter.convert(102111),
+        'one hundred and two thousand one hundred and eleven');
+    expect(converter.convert(111111),
+        'one hundred and eleven thousand one hundred and eleven');
+    expect(converter.convert(199999),
+        'one hundred and ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(200000), 'two hundred thousand');
-    expect(converter.convert(222222), 'two hundred and twenty two thousand two hundred and twenty two');
+    expect(converter.convert(222222),
+        'two hundred and twenty two thousand two hundred and twenty two');
     expect(converter.convert(900000), 'nine hundred thousand');
-    expect(converter.convert(999999), 'nine hundred and ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(999999),
+        'nine hundred and ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(1000000), 'one million');
     expect(converter.convert(1000001), 'one million one');
-    expect(converter.convert(1252212), 'one million two hundred and fifty two thousand two hundred and twelve');
-    expect(
-        converter.convert(9999999), 'nine million nine hundred and ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(1252212),
+        'one million two hundred and fifty two thousand two hundred and twelve');
+    expect(converter.convert(9999999),
+        'nine million nine hundred and ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000000), 'ten million');
     expect(converter.convert(10000001), 'ten million one');
     expect(converter.convert(10000119), 'ten million one hundred and nineteen');
@@ -165,7 +177,8 @@ void main() {
         'nine billion nine hundred and ninety nine million nine hundred and ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000000000), 'ten billion');
     expect(converter.convert(13000000000), 'thirteen billion');
-    expect(converter.convert(135000000000), 'one hundred and thirty five billion');
+    expect(
+        converter.convert(135000000000), 'one hundred and thirty five billion');
     expect(
         converter.convert(4121421211155596001),
         'four quintrillion '

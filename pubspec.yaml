@@ -1,17 +1,17 @@
 name: number_to_text_converter
 description: A library to convert a number to its text representation as per the International or Indian Numbering System
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/ShoutOutSoftware/NumberToTextConverter-Dart
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.16.1
-  pedantic: ^1.9.0
+  intl: ^0.17.0
+  pedantic: ^1.11.1
 
 dev_dependencies:
   flutter_test:

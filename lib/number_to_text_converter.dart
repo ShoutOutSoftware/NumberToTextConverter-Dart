@@ -13,8 +13,6 @@ class NumberToTextConverter {
       : this._numberSplitter = InternationalNumberingSystemNumberSplitter();
 
   String convert(int number) {
-    if (number == null) return '';
-
     return getTextForNumber(number);
   }
 
@@ -69,6 +67,6 @@ class NumberToTextConverter {
   String getMappingForNumber(int number) {
     if (number == 0 || !NumberMappings.mappings.containsKey(number)) return '';
 
-    return NumberMappings.mappings[number];
+    return NumberMappings.mappings[number]!;
   }
 }

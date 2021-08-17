@@ -5,7 +5,6 @@ void main() {
   var converter = NumberToTextConverter.forIndianNumberingSystem();
 
   test('indian numbering system number conversion', () {
-    expect(converter.convert(null), '');
     expect(converter.convert(0), '');
     expect(converter.convert(1), 'one');
     expect(converter.convert(2), 'two');
@@ -103,7 +102,8 @@ void main() {
     expect(converter.convert(1700), 'one thousand seven hundred');
     expect(converter.convert(1800), 'one thousand eight hundred');
     expect(converter.convert(1900), 'one thousand nine hundred');
-    expect(converter.convert(1999), 'one thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(1999), 'one thousand nine hundred and ninety nine');
     expect(converter.convert(2000), 'two thousand');
     expect(converter.convert(2562), 'two thousand five hundred and sixty two');
     expect(converter.convert(3000), 'three thousand');
@@ -113,7 +113,8 @@ void main() {
     expect(converter.convert(7000), 'seven thousand');
     expect(converter.convert(8000), 'eight thousand');
     expect(converter.convert(9000), 'nine thousand');
-    expect(converter.convert(9999), 'nine thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(9999), 'nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000), 'ten thousand');
     expect(converter.convert(10001), 'ten thousand one');
     expect(converter.convert(10010), 'ten thousand ten');
@@ -121,12 +122,16 @@ void main() {
     expect(converter.convert(10083), 'ten thousand eighty three');
     expect(converter.convert(10100), 'ten thousand one hundred');
     expect(converter.convert(10500), 'ten thousand five hundred');
-    expect(converter.convert(10999), 'ten thousand nine hundred and ninety nine');
+    expect(
+        converter.convert(10999), 'ten thousand nine hundred and ninety nine');
     expect(converter.convert(11000), 'eleven thousand');
-    expect(converter.convert(11378), 'eleven thousand three hundred and seventy eight');
+    expect(converter.convert(11378),
+        'eleven thousand three hundred and seventy eight');
     expect(converter.convert(20000), 'twenty thousand');
-    expect(converter.convert(68723), 'sixty eight thousand seven hundred and twenty three');
-    expect(converter.convert(99999), 'ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(68723),
+        'sixty eight thousand seven hundred and twenty three');
+    expect(converter.convert(99999),
+        'ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(100000), 'one lakh');
     expect(converter.convert(100001), 'one lakh one');
     expect(converter.convert(100010), 'one lakh ten');
@@ -134,22 +139,31 @@ void main() {
     expect(converter.convert(100024), 'one lakh twenty four');
     expect(converter.convert(100100), 'one lakh one hundred');
     expect(converter.convert(100111), 'one lakh one hundred and eleven');
-    expect(converter.convert(102111), 'one lakh two thousand one hundred and eleven');
-    expect(converter.convert(111111), 'one lakh eleven thousand one hundred and eleven');
-    expect(converter.convert(199999), 'one lakh ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(102111),
+        'one lakh two thousand one hundred and eleven');
+    expect(converter.convert(111111),
+        'one lakh eleven thousand one hundred and eleven');
+    expect(converter.convert(199999),
+        'one lakh ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(200000), 'two lakh');
-    expect(converter.convert(222222), 'two lakh twenty two thousand two hundred and twenty two');
+    expect(converter.convert(222222),
+        'two lakh twenty two thousand two hundred and twenty two');
     expect(converter.convert(900000), 'nine lakh');
-    expect(converter.convert(999999), 'nine lakh ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(999999),
+        'nine lakh ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(1000000), 'ten lakh');
     expect(converter.convert(1000001), 'ten lakh one');
-    expect(converter.convert(1252212), 'twelve lakh fifty two thousand two hundred and twelve');
-    expect(converter.convert(9999999), 'ninety nine lakh ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(1252212),
+        'twelve lakh fifty two thousand two hundred and twelve');
+    expect(converter.convert(9999999),
+        'ninety nine lakh ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000000), 'one crore');
     expect(converter.convert(10000001), 'one crore one');
     expect(converter.convert(10000119), 'one crore one hundred and nineteen');
-    expect(converter.convert(15334564), 'one crore fifty three lakh thirty four thousand five hundred and sixty four');
-    expect(converter.convert(19999999), 'one crore ninety nine lakh ninety nine thousand nine hundred and ninety nine');
+    expect(converter.convert(15334564),
+        'one crore fifty three lakh thirty four thousand five hundred and sixty four');
+    expect(converter.convert(19999999),
+        'one crore ninety nine lakh ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(20000000), 'two crore');
     expect(converter.convert(100000000), 'ten crore');
     expect(converter.convert(999999999),
@@ -162,7 +176,8 @@ void main() {
         'nine hundred and ninety nine crore ninety nine lakh ninety nine thousand nine hundred and ninety nine');
     expect(converter.convert(10000000000), 'one thousand crore');
     expect(converter.convert(13000000000), 'one thousand three hundred crore');
-    expect(converter.convert(135000000000), 'thirteen thousand five hundred crore');
+    expect(converter.convert(135000000000),
+        'thirteen thousand five hundred crore');
     expect(
         converter.convert(4121421211155596001),
         'forty one thousand two hundred and fourteen crore '
