@@ -13,3 +13,7 @@
 ## 1.0.3
 
 - Fixed example
+
+## 1.0.4
+
+- Migrated to null safety
