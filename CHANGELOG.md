@@ -17,3 +17,7 @@
 ## 1.0.4
 
 - Migrated to null safety
+
+## 1.0.5
+
+- Updated intl dart library to latest version
