@@ -6,15 +6,10 @@ import 'number_splitter.dart';
 class NumberToTextConverter {
   final NumberSplitter _numberSplitter;
 
-  NumberToTextConverter.forIndianNumberingSystem()
-      : this._numberSplitter = IndianNumberingSystemNumberSplitter();
+  NumberToTextConverter.forIndianNumberingSystem() : this._numberSplitter = IndianNumberingSystemNumberSplitter();
 
   NumberToTextConverter.forInternationalNumberingSystem()
       : this._numberSplitter = InternationalNumberingSystemNumberSplitter();
-
-  String convert(int number) {
-    return getTextForNumber(number);
-  }
 
   String getTextForNumber(int number) {
     var segments = _numberSplitter.splitNumber(number);
@@ -22,7 +17,7 @@ class NumberToTextConverter {
 
     for (int i = 0; i < segments.length; i++) {
       var part = segments[i];
-      var partString = getTextForNumberLessThan1000(part.number);
+      var partString = _getTextForNumberLessThan1000(part.number);
       var shouldAddSpace = text.isNotEmpty && partString.isNotEmpty;
 
       if (shouldAddSpace) text += ' ';
@@ -34,37 +29,35 @@ class NumberToTextConverter {
 
   //MARK: Functions to get text for numbers less that 1000
 
-  String getTextForNumberLessThan1000(int number) {
+  String _getTextForNumberLessThan1000(int number) {
     if (number > 999) return '';
 
     var lastTwoDigits = (number % 100).toInt();
-    var lastTwoDigitsText = getTextForNumberLessThan100(lastTwoDigits);
+    var lastTwoDigitsText = _getTextForNumberLessThan100(lastTwoDigits);
 
     var digitAtHundredsPlace = number ~/ 100;
-    var hundredsPlaceText = getMappingForNumber(digitAtHundredsPlace);
+    var hundredsPlaceText = _getMappingForNumber(digitAtHundredsPlace);
     if (hundredsPlaceText.isNotEmpty) hundredsPlaceText += ' hundred';
-    if (hundredsPlaceText.isNotEmpty && lastTwoDigitsText.isNotEmpty)
-      hundredsPlaceText += ' and ';
+    if (hundredsPlaceText.isNotEmpty && lastTwoDigitsText.isNotEmpty) hundredsPlaceText += ' and ';
 
     return hundredsPlaceText + lastTwoDigitsText;
   }
 
-  String getTextForNumberLessThan100(int number) {
+  String _getTextForNumberLessThan100(int number) {
     if (number > 99) return '';
-    if (getMappingForNumber(number).isNotEmpty)
-      return getMappingForNumber(number);
+    if (_getMappingForNumber(number).isNotEmpty) return _getMappingForNumber(number);
 
     var onesPlace = (number % 10).toInt();
-    var onesPlaceText = getMappingForNumber(onesPlace);
+    var onesPlaceText = _getMappingForNumber(onesPlace);
 
     var tensPlace = ((number - onesPlace) % 100).toInt();
-    var tensPlaceText = getMappingForNumber(tensPlace);
+    var tensPlaceText = _getMappingForNumber(tensPlace);
     if (onesPlaceText.isNotEmpty) tensPlaceText += ' ';
 
     return tensPlaceText + onesPlaceText;
   }
 
-  String getMappingForNumber(int number) {
+  String _getMappingForNumber(int number) {
     if (number == 0 || !NumberMappings.mappings.containsKey(number)) return '';
 
     return NumberMappings.mappings[number]!;

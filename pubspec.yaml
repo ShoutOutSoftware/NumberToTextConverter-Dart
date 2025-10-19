@@ -1,6 +1,6 @@
 name: number_to_text_converter
 description: A library to convert a number to its text representation as per the International or Indian Numbering System
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/ShoutOutSoftware/NumberToTextConverter-Dart
 
 environment:

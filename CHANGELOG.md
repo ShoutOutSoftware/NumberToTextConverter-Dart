@@ -21,3 +21,7 @@
 ## 1.0.5
 
 - Updated intl dart library to latest version
+
+## 1.0.6
+
+- Renamed the convert function to make it more readable
